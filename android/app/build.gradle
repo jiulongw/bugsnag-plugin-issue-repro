@@ -166,6 +166,11 @@ android {
             proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
         }
     }
+    externalNativeBuild {
+        cmake {
+            path "CMakeLists.txt"
+        }
+    }
 
     // applicationVariants are e.g. debug, release
     applicationVariants.all { variant ->
@@ -224,4 +229,7 @@ apply from: file("../../node_modules/@react-native-community/cli-platform-androi
 
 bugsnag {
   uploadReactNativeMappings = true
+}
+
+tasks.whenTaskAdded { task ->
 }
